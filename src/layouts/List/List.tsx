@@ -1,11 +1,15 @@
+import { useEffect, useState } from 'react';
 import './List.css'
-import { useState } from 'react';
 import { Card } from './components';
 import { Loading } from '../../components';
 
 const List = () => {
   const [stocks, setStocks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
 
   return (
     <>

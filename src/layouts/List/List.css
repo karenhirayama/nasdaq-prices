@@ -22,4 +22,9 @@
     .list {
         grid-template-columns: 1fr;
     }
+
+    .list__card {
+        min-width: 100px;
+        margin: 0 24px;
+    }
 }
