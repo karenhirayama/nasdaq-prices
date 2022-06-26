@@ -2,6 +2,7 @@
     border-bottom: 1px solid #000;
     box-shadow: 1px 0 1px 1px #808080;
     padding: 8px;
+    margin-bottom: 40px;
 }
 
 .navbar__link {

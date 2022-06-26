@@ -1,8 +1,7 @@
+import './Loading.css'
 
-const Loading = () => {
-  return (
-    <div>Loading</div>
-  )
-}
+const Loading = () => (
+  <div className="loading"></div>
+);
 
 export default Loading;
