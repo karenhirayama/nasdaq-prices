@@ -1,0 +1,24 @@
+.stock {
+    height: 76vh;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.stock__header {
+    display: flex;
+    margin-left: 24px;
+}
+
+.stock__header > a {
+    text-decoration: none;
+    height: fit-content;
+    color: black;
+    border: 1px solid #2046f5;
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+
+.stock__name {
+    margin: 0 auto;
+}

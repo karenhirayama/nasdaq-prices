@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './List.css'
 import { Card } from './components';
 import { Loading } from '../../components';
+import { Link } from 'react-router-dom';
 
 const List = () => {
   const [stocks, setStocks] = useState([]);
@@ -15,21 +16,9 @@ const List = () => {
     <>
       {isLoading ? <Loading /> :
         <div className='list'>
-          <div className="list__card">
+          <Link to='/nasdaq-stock/name' key='name' className="list__card">
             <Card />
-          </div>
-          <div className="list__card">
-            <Card />
-          </div>
-          <div className="list__card">
-            <Card />
-          </div>
-          <div className="list__card">
-            <Card />
-          </div>
-          <div className="list__card">
-            <Card />
-          </div>
+          </Link>
         </div>
       }
     </>
