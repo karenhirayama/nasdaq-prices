@@ -25,6 +25,31 @@
     gap: 40px;
 }
 
+.list__btn__disable {
+    border: 1px solid gray;
+    background-color: gainsboro;
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+
+.list__btn__previous {
+    border: 1px solid #2046f5;
+    background-color: #6dfafb;
+    color: #2046f5;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.list__btn__next {
+    border: 1px solid #6dfafb;
+    background-color: #2046f5;
+    color: #6dfafb; 
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 1300px) {
     .list__cards {
         grid-template-columns: repeat(2, 1fr);

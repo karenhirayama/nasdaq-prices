@@ -13,6 +13,7 @@ const List = () => {
 
   const getData = async () => {
     const { data } = await axios.get(getListPerPage(page));
+    console.log(data)
     setStocks(data.data);
   };
 
@@ -27,13 +28,17 @@ const List = () => {
         <div className='list'>
           <div className="list__cards">
             {stocks?.map((stock, index) => (
-            <Link to='/nasdaq-stock/name' key={index} className="list__card">
-              <Card name={stock?.name || ''} />
-            </Link>))}
+              <Link to='/nasdaq-stock/name' key={index} className="list__card">
+                <Card name={stock?.name || ''} />
+              </Link>))}
           </div>
           <div className="list__btn">
-            <button onClick={(e) => setPage(page - 1)}>Previous</button>
-            <button  onClick={(e) => setPage(page + 1)}>Next</button>
+            {(page === 1) ? <button className='list__btn__disable'>Previous</button> :
+              <button className='list__btn__previous' onClick={(e) => setPage(page - 1)}>Previous</button>
+            }
+            {(page === 125) ? <button className='list__btn__disable'>Next</button> :
+              <button className='list__btn__next' onClick={(e) => setPage(page + 1)}>Next</button>
+            }
           </div>
         </div>
       }
