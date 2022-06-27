@@ -3,22 +3,38 @@ import './List.css'
 import { Card } from './components';
 import { Loading } from '../../components';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { getListPerPage } from '../../api/api';
 
 const List = () => {
-  const [stocks, setStocks] = useState([]);
+  const [stocks, setStocks] = useState<any[]>([])
+  const [page, setPage] = useState(1)
   const [isLoading, setIsLoading] = useState(true);
 
+  const getData = async () => {
+    const { data } = await axios.get(getListPerPage(page));
+    setStocks(data.data);
+  };
+
   useEffect(() => {
+    // getData();
     setIsLoading(false);
-  }, []);
+  }, [page]);
 
   return (
     <>
       {isLoading ? <Loading /> :
         <div className='list'>
-          <Link to='/nasdaq-stock/name' key='name' className="list__card">
-            <Card />
-          </Link>
+          <div className="list__cards">
+            {stocks?.map((stock, index) => (
+            <Link to='/nasdaq-stock/name' key={index} className="list__card">
+              <Card name={stock?.name || ''} />
+            </Link>))}
+          </div>
+          <div className="list__btn">
+            <button onClick={(e) => setPage(page - 1)}>Previous</button>
+            <button  onClick={(e) => setPage(page + 1)}>Next</button>
+          </div>
         </div>
       }
     </>

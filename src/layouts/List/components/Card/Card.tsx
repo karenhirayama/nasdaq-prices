@@ -1,9 +1,14 @@
+import { FC } from 'react';
 import './Card.css';
 
-const Card = () => {
+interface CardProps {
+  name: string;
+}
+
+const Card: FC<CardProps> = ({ name }) => {
   return (
     <div className="card">
-      <p className="card__name">company name should be the public name</p>
+      <p className="card__name">{name}</p>
     </div>
   )
 }

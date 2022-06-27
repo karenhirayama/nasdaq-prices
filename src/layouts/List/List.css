@@ -1,4 +1,11 @@
 .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.list__cards {
     max-width: fit-content;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -12,14 +19,20 @@
     padding: 24px;
 }
 
+.list__btn {
+    display: flex;
+    margin: auto;
+    gap: 40px;
+}
+
 @media only screen and (max-width: 1300px) {
-    .list {
+    .list__cards {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media only screen and (max-width: 800px) {
-    .list {
+    .list__cards {
         grid-template-columns: 1fr;
     }
 
