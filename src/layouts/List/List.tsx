@@ -13,13 +13,13 @@ const List = () => {
 
   const getData = async () => {
     const { data } = await axios.get(getListPerPage(page));
-    console.log(data)
     setStocks(data.data);
+    setIsLoading(false);
   };
 
   useEffect(() => {
     getData();
-    setIsLoading(false);
+    setIsLoading(true);
   }, [page]);
 
   return (
@@ -31,7 +31,7 @@ const List = () => {
               <Link to={`/nasdaq-stock/${stock.symbol}/${stock.name}`} key={index} className="list__card" >
                 <Card name={stock.name} />
               </Link>
-              ))}
+            ))}
           </div>
           <div className="list__btn">
             {(page === 1) ? <button className='list__btn__disable'>Previous</button> :
