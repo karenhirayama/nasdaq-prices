@@ -12,13 +12,12 @@ const Chart = () => {
 
   const getHistoricalPrice = async () => {
     const { data } = await axios.get(getStockHistoricalData(params?.stock_symbol as string));
-    console.log(data.data)
     setHistoricalPrice(data.data)
   };
 
   useEffect(() => {
-   getHistoricalPrice();
-  },[params])
+    getHistoricalPrice();
+  }, [params])
 
   return (
     <div>
