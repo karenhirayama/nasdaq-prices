@@ -9,7 +9,7 @@ const App = () => (
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/nasdaq-stock/:stock_name' element={<Stock />} />
+        <Route path='/nasdaq-stock/:stock_symbol/:stock_name' element={<Stock />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />

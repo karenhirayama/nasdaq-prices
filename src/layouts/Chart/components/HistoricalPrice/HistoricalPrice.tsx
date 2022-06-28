@@ -21,7 +21,7 @@ ChartJS.register(
   Legend
 );
 
-const HistoricalPrice: FC<any> = ({historicalPrice}) => {
+const HistoricalPrice: FC<any> = ({historicalPrice, stockName}) => {
   const options = {
   responsive: true,
   plugins: {
@@ -54,7 +54,7 @@ const HistoricalPrice: FC<any> = ({historicalPrice}) => {
     datasets: [
       {
         data: historicalPrice?.map((price: any) => price.close),
-        label: `Name historical price (US$)`,
+        label: `${stockName} historical price (US$)`,
         borderColor: '#2046f5',
         backgroundColor: '#2046f5',
         fill: true,

@@ -13,7 +13,7 @@ const Stock = () => {
         <Link to='/'>Go back</Link>
       </div>
       <div className="stock__name">
-        <h1>Company name should be the public name</h1>
+        <h1>{params?.stock_name} name should be the public name</h1>
       </div>
       <div className="stock__chart">
         <Chart />

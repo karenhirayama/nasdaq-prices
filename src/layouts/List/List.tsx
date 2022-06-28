@@ -28,8 +28,8 @@ const List = () => {
         <div className='list'>
           <div className="list__cards">
             {stocks?.map((stock, index) => (
-              <Link to={`/nasdaq-stock/${stock.symbol}`} key={index} className="list__card" >
-                <Card name={stock?.name} />
+              <Link to={`/nasdaq-stock/${stock.symbol}/${stock.name}`} key={index} className="list__card" >
+                <Card name={stock.name} />
               </Link>
               ))}
           </div>

@@ -11,7 +11,7 @@ const Chart = () => {
   const params = useParams();
 
   const getHistoricalPrice = async () => {
-    const { data } = await axios.get(getStockHistoricalData(params?.stock_name as string));
+    const { data } = await axios.get(getStockHistoricalData(params?.stock_symbol as string));
     console.log(data.data)
     setHistoricalPrice(data.data)
   };
@@ -23,7 +23,7 @@ const Chart = () => {
   return (
     <div>
       <RangeTime />
-      <HistoricalPrice historicalPrice={historicalPrice} />
+      <HistoricalPrice historicalPrice={historicalPrice} stockName={params?.stock_name} />
     </div>
   )
 }
