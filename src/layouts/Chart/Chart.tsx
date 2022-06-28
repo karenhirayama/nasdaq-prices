@@ -17,11 +17,11 @@ const Chart = () => {
 
   useEffect(() => {
     getHistoricalPrice();
-  }, [params])
+  }, [params]);
 
   return (
     <div>
-      <RangeTime />
+      <RangeTime setInitialDate={setInitialDate} setFinalDate={setFinalDate} />
       <HistoricalPrice historicalPrice={historicalPrice} stockName={params?.stock_name} />
     </div>
   )

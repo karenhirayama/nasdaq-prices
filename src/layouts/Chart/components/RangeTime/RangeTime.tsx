@@ -1,7 +1,20 @@
+import { FC } from "react";
 
-const RangeTime = () => {
+const RangeTime: FC<any> = ({setInitialDate, setFinalDate}) => {
+
   return (
-    <div>RangeTime</div>
+    <div>
+      <div className="rangeTime">
+        <div className="rangeTime__input">
+          <div className="rangeTime__input__initial_date">
+            <input type='date' />
+          </div>
+          <div className="rangeTime__input__final_date">
+            <input type='date' />
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
