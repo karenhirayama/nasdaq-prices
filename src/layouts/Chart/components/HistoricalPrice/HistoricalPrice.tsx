@@ -29,9 +29,21 @@ const HistoricalPrice: FC<any> = ({historicalPrice}) => {
       position: 'top' as const,
     },
     title: {
-      display: true,
-      text: 'Chart.js Line Chart',
+      display: false,
     },
+  },
+  scales: {
+    yAxis: {
+      position: 'right',
+      ticks: {
+        color: 'blue'
+      }
+    },
+    xAis: {
+      ticks: {
+        color: '#2046f5',
+      }
+    }
   },
 };
   const data = {
@@ -42,7 +54,10 @@ const HistoricalPrice: FC<any> = ({historicalPrice}) => {
     datasets: [
       {
         data: historicalPrice?.map((price: any) => price.close),
-        label: `Name historical price`
+        label: `Name historical price (US$)`,
+        borderColor: '#2046f5',
+        backgroundColor: '#2046f5',
+        fill: true,
       }
     ]
   };

@@ -18,7 +18,7 @@ const List = () => {
   };
 
   useEffect(() => {
-    // getData();
+    getData();
     setIsLoading(false);
   }, [page]);
 
@@ -28,9 +28,10 @@ const List = () => {
         <div className='list'>
           <div className="list__cards">
             {stocks?.map((stock, index) => (
-              <Link to='/nasdaq-stock/name' key={index} className="list__card">
-                <Card name={stock?.name || ''} />
-              </Link>))}
+              <Link to={`/nasdaq-stock/${stock.symbol}`} key={index} className="list__card" >
+                <Card name={stock?.name} />
+              </Link>
+              ))}
           </div>
           <div className="list__btn">
             {(page === 1) ? <button className='list__btn__disable'>Previous</button> :
@@ -44,6 +45,6 @@ const List = () => {
       }
     </>
   )
-}
+};
 
 export default List;
