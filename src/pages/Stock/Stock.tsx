@@ -1,10 +1,8 @@
-import { useState } from 'react';
 import { Link, useParams } from "react-router-dom";
 import { Chart } from '../../layouts';
 import './Stock.css';
 
 const Stock = () => {
-  const [stockInfo, setStockInfo] = useState([]);
   const params = useParams();
 
   return (
@@ -13,7 +11,7 @@ const Stock = () => {
         <Link to='/'>Go back</Link>
       </div>
       <div className="stock__name">
-        <h1>{params?.stock_name} name should be the public name</h1>
+        <h1>{params?.stock_name} - Historical stock price</h1>
       </div>
       <div className="stock__chart">
         <Chart />

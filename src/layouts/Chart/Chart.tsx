@@ -6,8 +6,10 @@ import { useParams } from 'react-router-dom';
 
 const Chart = () => {
   const [historicalPrice, setHistoricalPrice] = useState<any>([]);
-  const [initialDate, setInitialDate] = useState('');
-  const [finalDate, setFinalDate] = useState('');
+  const [ searchByDate, setSearchByDate] = useState<any>({
+    initialDate: new Date().toISOString().substr(0, 10) as any,
+    finalDate: new Date().toISOString().substr(0, 10) as any
+  });
   const params = useParams();
 
   const getHistoricalPrice = async () => {
@@ -21,7 +23,7 @@ const Chart = () => {
 
   return (
     <div>
-      <RangeTime setInitialDate={setInitialDate} setFinalDate={setFinalDate} />
+      <RangeTime searchByDate={searchByDate} setSearchByDate={setSearchByDate} />
       <HistoricalPrice historicalPrice={historicalPrice} stockName={params?.stock_name} />
     </div>
   )

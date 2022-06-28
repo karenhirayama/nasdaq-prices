@@ -14,6 +14,7 @@
 }
 
 .list__card {
+    width: 300px;
     background-color: #AFF;
     border-radius: 4px;
     padding: 24px;
