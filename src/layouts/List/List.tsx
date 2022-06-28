@@ -7,7 +7,7 @@ import axios from 'axios';
 import { getListPerPage } from '../../api/api';
 
 const List = () => {
-  const [stocks, setStocks] = useState<any[]>([])
+  const [stocks, setStocks] = useState<any[]>(['name'])
   const [page, setPage] = useState(1)
   const [isLoading, setIsLoading] = useState(true);
 
