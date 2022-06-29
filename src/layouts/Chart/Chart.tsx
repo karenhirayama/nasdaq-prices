@@ -20,24 +20,29 @@ const Chart = () => {
       const { data } = await axios.get(getStockHistoricalData(params?.stock_symbol as string));
       setHistoricalPrice(data.data);
       setIsLoading(false);
+      if (data.data.length === 0) {
+        setIsError(true)
+      };
     } catch (error) {
       setIsError(true);
       setIsLoading(false);
-    }
+    };
   };
 
   const getHistoricalPriceByDate = async () => {
     setIsLoading(true);
     try {
       const { data } = await axios.get(getStockHistoricalByDate(params?.stock_symbol as string, searchByDate.initialDate, searchByDate.finalDate));
-      console.log(getStockHistoricalByDate(params?.stock_symbol as string, searchByDate.initialDate, searchByDate.finalDate))
       setHistoricalPrice(data.data);
-      setIsLoading(false)
+      setIsLoading(false);
+      if (data.data.length === 0) {
+        setIsError(true)
+      };
     } catch (error) {
       setIsError(true);
       setIsLoading(false);
-    }
-  }
+    };
+  };
 
   useEffect(() => {
     getHistoricalPrice();
@@ -68,7 +73,7 @@ const Chart = () => {
         />
       </div>
     )
-  }
-}
+  };
+};
 
 export default Chart;

@@ -17,10 +17,13 @@ const List = () => {
       const { data } = await axios.get(getListPerPage(page));
       setStocks(data.data);
       setIsLoading(false);
+      if (data.data.length === 0) {
+        setIsError(true)
+      };
     } catch (error) {
       setIsError(true);
       setIsLoading(false);
-    }
+    };
   };
 
   useEffect(() => {
