@@ -7,14 +7,20 @@ import axios from 'axios';
 import { getListPerPage } from '../../api/api';
 
 const List = () => {
-  const [stocks, setStocks] = useState<any[]>(['name'])
-  const [page, setPage] = useState(1)
+  const [stocks, setStocks] = useState<any[]>(['name']);
+  const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [page, setPage] = useState(1)
 
   const getData = async () => {
-    const { data } = await axios.get(getListPerPage(page));
-    setStocks(data.data);
-    setIsLoading(false);
+    try {
+      const { data } = await axios.get(getListPerPage(page));
+      setStocks(data.data);
+      setIsLoading(false);
+    } catch (error) {
+      setIsError(true);
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -22,9 +28,21 @@ const List = () => {
     setIsLoading(true);
   }, [page]);
 
-  return (
-    <>
-      {isLoading ? <Loading /> :
+  if (isLoading) {
+    return (
+      <>
+        <Loading />
+      </>
+    )
+  } else if (isError) {
+    return (
+      <>
+        Error
+      </>
+    )
+  } else {
+    return (
+      <>
         <div className='list'>
           <div className="list__cards">
             {stocks?.map((stock, index) => (
@@ -42,9 +60,9 @@ const List = () => {
             }
           </div>
         </div>
-      }
-    </>
-  )
+      </>
+    )
+  }
 };
 
 export default List;
