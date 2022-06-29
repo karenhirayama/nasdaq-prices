@@ -28,7 +28,7 @@ const Chart = () => {
 
   return (
     <div>
-      <RangeTime searchByDate={searchByDate} setSearchByDate={setSearchByDate} />
+      <RangeTime searchByDate={searchByDate} setSearchByDate={setSearchByDate} getHistoricalPriceByDate={getHistoricalPriceByDate} />
       <HistoricalPrice historicalPrice={historicalPrice} stockName={params?.stock_name} />
     </div>
   )
