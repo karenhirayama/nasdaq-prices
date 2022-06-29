@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { getStockHistoricalData, getStockHistoricalByDate } from '../../api/api';
 import { HistoricalPrice, RangeTime } from "./components";
 import { useParams } from 'react-router-dom';
-import { Loading } from '../../components';
+import { Error, Loading } from '../../components';
 
 const Chart = () => {
   const [historicalPrice, setHistoricalPrice] = useState<any>([]);
@@ -55,7 +55,7 @@ const Chart = () => {
   } else if (isError) {
     return (
       <>
-        Error
+        <Error />
       </>
     )
   } else {

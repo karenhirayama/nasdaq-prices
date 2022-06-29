@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './List.css'
 import { Card } from './components';
-import { Loading } from '../../components';
+import { Error, Loading } from '../../components';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { getListPerPage } from '../../api/api';
@@ -40,7 +40,7 @@ const List = () => {
   } else if (isError) {
     return (
       <>
-        Error
+        <Error />
       </>
     )
   } else {
