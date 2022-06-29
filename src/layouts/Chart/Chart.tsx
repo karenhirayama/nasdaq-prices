@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { getStockHistoricalData } from '../../api/api';
+import { getStockHistoricalData, getStockHistoricalByDate } from '../../api/api';
 import { HistoricalPrice, RangeTime } from "./components";
 import { useParams } from 'react-router-dom';
 
@@ -16,6 +16,11 @@ const Chart = () => {
     const { data } = await axios.get(getStockHistoricalData(params?.stock_symbol as string));
     setHistoricalPrice(data.data)
   };
+
+  const getHistoricalPriceByDate = async () => {
+    const { data } = await axios.get(getStockHistoricalByDate(params?.stock_symbol as string, searchByDate.initialDate, searchByDate.finalDate));
+    setHistoricalPrice(data.data);
+  }
 
   useEffect(() => {
     getHistoricalPrice();
