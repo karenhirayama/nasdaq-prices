@@ -27,6 +27,10 @@ The homepage has a list of all companies listed in the NASDAQ stock marked.
 
 The page displays the historical price of the stock.
 
+If you want to search by a specify range time, click in the button "Click here to search by time", and this action open a modal with the inputs.
+
+<img src="./StockPage_search_input.png" alt="Modal to search by range time"></img>
+
 ### Not found page
 
 <img src="./NotFound.png" alt="Not found page"></img>
