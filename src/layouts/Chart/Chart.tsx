@@ -12,8 +12,8 @@ const Chart = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showSearchInput, setShowSearchInput] = useState(false);
   const [searchByDate, setSearchByDate] = useState<any>({
-    initialDate: new Date().toISOString().substr(0, 10) as any,
-    finalDate: new Date().toISOString().substr(0, 10) as any
+    initialDate: '2022-06-01',
+    finalDate: '2022-06-15'
   });
   const params = useParams();
 
@@ -32,6 +32,7 @@ const Chart = () => {
   };
 
   const getHistoricalPriceByDate = async () => {
+    setShowSearchInput(false);
     setIsLoading(true);
     try {
       const { data } = await axios.get(getStockHistoricalByDate(params?.stock_symbol as string, searchByDate.initialDate, searchByDate.finalDate));
@@ -51,7 +52,7 @@ const Chart = () => {
   };
 
   useEffect(() => {
-    // getHistoricalPrice();
+    getHistoricalPrice();
   }, [params]);
 
   if (isLoading) {

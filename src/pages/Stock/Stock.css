@@ -1,5 +1,6 @@
 .stock {
     max-width: 1200px;
+    max-height: 80vh;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -10,7 +11,7 @@
     margin-left: 24px;
 }
 
-.stock__header>a {
+.stock__header > a {
     text-decoration: none;
     height: fit-content;
     color: black;
@@ -21,4 +22,10 @@
 
 .stock__name {
     margin: 0 auto;
+}
+
+@media only screen and (max-width: 800px) {
+    .stock__name > h1 {
+        font-size: 18px;
+    }
 }

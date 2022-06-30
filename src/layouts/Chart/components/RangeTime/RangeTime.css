@@ -37,11 +37,29 @@
     margin-bottom: 16px;
 }
 
+.rangeTime__input__error {
+    margin-top: -8px;
+    margin-bottom: 8px;
+}
+
+.rangeTime__input__error>span {
+    color: red;
+    font-size: 12px;
+}
+
 .rangeTime__btn {
     display: flex;
     gap: 8px;
     margin-bottom: 24px;
 }
+
+.rangeTime__btn__disable {
+    border: 1px solid gray;
+    background-color: gainsboro;
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+
 
 .rangeTime__btn__cancel {
     border: none;
