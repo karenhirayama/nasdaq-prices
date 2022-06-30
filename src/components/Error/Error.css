@@ -1,0 +1,19 @@
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error__title > h1 {
+    color: red;
+}
+
+.error__text > p {
+    margin-bottom: 0px;
+}
+
+.error__contact {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;   
+}

@@ -27,17 +27,17 @@ const List = () => {
   };
 
   useEffect(() => {
-    getData();
+    // getData();
     setIsLoading(true);
   }, [page]);
 
-  if (isLoading) {
+  if (!isLoading) {
     return (
       <>
         <Loading />
       </>
     )
-  } else if (isError) {
+  } else if (!isError) {
     return (
       <>
         <Error />
