@@ -9,6 +9,7 @@ const Chart = () => {
   const [historicalPrice, setHistoricalPrice] = useState<any>([]);
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [showSearchInput, setShowSearchInput] = useState(false);
   const [searchByDate, setSearchByDate] = useState<any>({
     initialDate: new Date().toISOString().substr(0, 10) as any,
     finalDate: new Date().toISOString().substr(0, 10) as any
@@ -44,11 +45,15 @@ const Chart = () => {
     };
   };
 
+  const handleShowSearchInput = () => {
+    setShowSearchInput(!showSearchInput);
+  };
+
   useEffect(() => {
-    getHistoricalPrice();
+    // getHistoricalPrice();
   }, [params]);
 
-  if (isLoading) {
+  if (!isLoading) {
     return (<>
       <Loading />
     </>)
@@ -61,15 +66,22 @@ const Chart = () => {
   } else {
     return (
       <div>
+        <div className="chart__btn">
+          <button onClick={handleShowSearchInput}>Click here to search by time</button>
+        </div>
+        <div className="chart__historical">
+          <HistoricalPrice
+            historicalPrice={historicalPrice}
+            stockName={params?.stock_name}
+          />
+        </div>
         <RangeTime
+          handleShowSearchInput={handleShowSearchInput}
+          showSearchInput={showSearchInput}
           searchByDate={searchByDate}
           setSearchByDate={setSearchByDate}
           getHistoricalPriceByDate={getHistoricalPriceByDate}
           handleClearSearch={getHistoricalPrice}
-        />
-        <HistoricalPrice
-          historicalPrice={historicalPrice}
-          stockName={params?.stock_name}
         />
       </div>
     )

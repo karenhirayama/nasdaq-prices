@@ -1,8 +1,27 @@
 .rangeTime {
+    position: absolute;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.rangeTime__container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 24px;
+    height: fit-content;
+    background-color: white;
+    margin: 15% auto;
+    border-radius: 4px;
+    border: 1px solid gray;
 }
 
 .rangeTime__input {
@@ -13,9 +32,28 @@
 .rangeTime__input__section {
     display: flex;
     flex-direction: row;
-    gap: 16px;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-bottom: 16px;
 }
 
 .rangeTime__btn {
     display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.rangeTime__btn__cancel {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.rangeTime__btn__confirm {
+    border: 1px solid #6dfafb;
+    background-color: #2046f5;
+    color: #6dfafb;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
 }
