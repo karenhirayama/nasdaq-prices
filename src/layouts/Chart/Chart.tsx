@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import './Chart.css';
 import { getStockHistoricalData, getStockHistoricalByDate } from '../../api/api';
 import { HistoricalPrice, RangeTime } from "./components";
 import { useParams } from 'react-router-dom';
@@ -53,7 +54,7 @@ const Chart = () => {
     // getHistoricalPrice();
   }, [params]);
 
-  if (!isLoading) {
+  if (isLoading) {
     return (<>
       <Loading />
     </>)
@@ -66,14 +67,14 @@ const Chart = () => {
   } else {
     return (
       <div>
-        <div className="chart__btn">
-          <button onClick={handleShowSearchInput}>Click here to search by time</button>
-        </div>
         <div className="chart__historical">
           <HistoricalPrice
             historicalPrice={historicalPrice}
             stockName={params?.stock_name}
           />
+        </div>
+        <div>
+          <button className="chart__btn" onClick={handleShowSearchInput}>Click here to search by time</button>
         </div>
         <RangeTime
           handleShowSearchInput={handleShowSearchInput}

@@ -1,0 +1,13 @@
+.chart__historical {
+    margin: auto 24px;
+}
+
+.chart__btn {
+    margin-top: 24px;
+    border: 1px solid #6dfafb;
+    background-color: #2046f5;
+    color: #6dfafb;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
