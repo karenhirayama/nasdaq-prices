@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+# NASDAQ STOCK HISTORICAL PRICE 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project is build with [STOCKDATA.ORG](https://www.stockdata.org/) to display the informations.
 
-## Available Scripts
+## Tecnologies
 
-In the project directory, you can run:
+This project is build with:
+
+[ReactJS](https://pt-br.reactjs.org/)
+[Axios](https://axios-http.com/docs/intro)
+[React-Router-Dom](https://v5.reactrouter.com/web/guides/quick-start)
+[React-ChartJS-2](https://react-chartjs-2.js.org/)
+
+## User Story
+
+A user can view the list of all companies listed in the NASDAQ stock marked, also can see a historical price of a specify stock.
+### Homepage
+
+<img src="./HomePage_list.png" alt="Homepage list of all companies"></img>
+<img src="./HomePage_btn.png" alt="Buttons to see more companies"></img>
+
+The homepage has a list of all companies listed in the NASDAQ stock marked.
+
+### Historical price
+
+<img src="./StockPage.png" alt="Historical price of the stock" ></img>
+
+The page displays the historical price of the stock.
+
+### Not found page
+
+<img src="./NotFound.png" alt="Not found page"></img>
+
+If the user try to go to a page that doesn't exist, the user will be directed to a Not Found page.
+
+### Error in fetch data
+
+<img src="./LoadingError.png" alt="Message to error in fetch data"></img>
+
+If the fetch data fails or the search in the API fails, the user will be directed to a not found page.
+
+## Start the application
+
+To run the application, first make sure you have [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/). The follow steps are with yarn, but it works with npm.
+
+### `yarn install`
+
+Run in the terminal `yarn install` to install `node-modules`.
 
 ### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+After run in the terminal `yarn start`, and open [http://localhost:3000](http://localhost:3000) to view it in the browser.
