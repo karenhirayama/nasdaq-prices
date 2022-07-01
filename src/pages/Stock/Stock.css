@@ -1,6 +1,6 @@
 .stock {
     max-width: 1200px;
-    max-height: 80vh;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     margin: auto;
