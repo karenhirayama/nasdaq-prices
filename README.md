@@ -1,6 +1,6 @@
 # NASDAQ STOCK HISTORICAL PRICE 
 
-The project is build with [STOCKDATA.ORG](https://www.stockdata.org/) to display the informations.
+The project is build with [STOCKDATA.ORG](https://www.stockdata.org/) to display the informations, and it can see in [Nasdaq Stock Marked](https://62be4a9d680e1d0de7e79642--nasdaq-historical-price-stock-marked.netlify.app/).
 
 ## Tecnologies
 
@@ -54,3 +54,7 @@ Run in the terminal `yarn install` to install `node-modules`.
 ### `yarn start`
 
 After run in the terminal `yarn start`, and open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Deploy
+
+The implementation of the application is deploy with [Netlify](https://www.netlify.com/).
