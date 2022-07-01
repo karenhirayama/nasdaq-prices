@@ -15,12 +15,13 @@ The project is built with [STOCKDATA.ORG](https://www.stockdata.org/) to displa
 
 This project is build with:
 
-<ul>
-    <li>[ReactJS](https://pt-br.reactjs.org/)</li>
-    <li>[Axios](https://axios-http.com/docs/intro)</li>
-    <li>[React-Router-Dom](https://v5.reactrouter.com/web/guides/quick-start)</li>
-    <li>[React-ChartJS-2](https://react-chartjs-2.js.org/)</li>
-</ul>
+[ReactJS](https://pt-br.reactjs.org/)
+
+[Axios](https://axios-http.com/docs/intro)
+
+[React-Router-Dom](https://v5.reactrouter.com/web/guides/quick-start)
+    
+[React-ChartJS-2](https://react-chartjs-2.js.org/)
 
 ## [User Story](#user-story)
 
